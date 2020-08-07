@@ -11,7 +11,7 @@ function toggleMenu() {
 
 function fetchData() {
   const req = new XMLHttpRequest();
-  req.open('GET', '/Users/grambo/Documents/CODE/doughertyg.github.io/data/grahamdougherty.json', true);
+  req.open('GET', '/data/grahamdougherty.json', true);
   req.onload = function() {
     const data = JSON.parse(req.responseText);
     console.log('what is res? ', data);
