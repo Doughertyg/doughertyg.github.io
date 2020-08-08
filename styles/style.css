@@ -166,7 +166,7 @@ h1 {
 }
 
 .viewer__modal {
-	height: 120px;
+	height: fit-content;
 	width: 300px;
 	max-width: 100%;
 	margin: 5px;
@@ -189,6 +189,7 @@ h1 {
 .experience-modal__company {
 	font-size: 25px;
 	font-variant: petite-caps;
+	padding: 5px 0;
 }
 
 .experience-modal__desc {
