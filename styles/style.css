@@ -165,6 +165,10 @@ h1 {
 	justify-content: center;
 }
 
+.experience-modal__work {
+	display: none;
+}
+
 .viewer__modal {
 	height: fit-content;
 	width: 300px;
@@ -173,10 +177,31 @@ h1 {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	transform-origin: center;
 }
 
 .viewer__modal:hover {
 	background: rgba(255, 255, 255, 0.2);
+}
+
+.viewer__modal.--flipped {
+	animation-name: flip;
+	animation-duration: .5s;
+	animation-timing-function: cubic-bezier(1,-0.22, 0.05, 1.28);
+}
+
+.viewer__modal.--flipped p, .viewer__modal.--flipped h1, .viewer__modal.--flipped h2 {
+	display: none;
+}
+
+.viewer__modal.--flipped .experience-modal__work {
+	display: block;
+}
+
+@keyframes flip {
+	0% {transform: scaleX(1);}
+	50% {transform: scaleX(0);}
+	100% {transform: scaleX(1);}
 }
 
 .experience-modal__title {
@@ -201,10 +226,6 @@ h1 {
 
 .experience-modal__date {
 	text-align: end;
-}
-
-.experience-modal__work {
-	display: none;
 }
 
 .module {
