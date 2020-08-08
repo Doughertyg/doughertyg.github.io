@@ -85,8 +85,6 @@ body {
 	align-items: center;
 }
 
-
-
 h1 {
 	font-size: 36px;
 	font-family: Arial, Helvetica, sans-serif;
@@ -97,11 +95,12 @@ h1 {
 	flex-grow: 1;
 }
 
-.--menu img {
+.--header img {
 	width: 36px;
 	height: 36px;
 	border-radius: 50%;
 	margin-bottom: 10px;
+	margin-right: 10px;
 }
 
 .--menu {
@@ -160,13 +159,15 @@ h1 {
 
 .main__viewer {
 	flex-grow: 1;
+	flex-wrap: wrap;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
 .experience-modal__work {
-	display: none;
+	visibility: hidden;
+	height: 0;
 }
 
 .viewer__modal {
@@ -178,6 +179,7 @@ h1 {
 	flex-direction: column;
 	justify-content: space-between;
 	transform-origin: center;
+	transition: height .5s cubic-bezier(1,-0.22, 0.05, 1.28);
 }
 
 .viewer__modal:hover {
@@ -190,15 +192,19 @@ h1 {
 	animation-timing-function: cubic-bezier(1,-0.22, 0.05, 1.28);
 }
 
-.viewer__modal.--flipped p, .viewer__modal.--flipped h1, .viewer__modal.--flipped h2 {
-	display: none;
-}
-
-.viewer__modal.--flipped .experience-modal__work {
-	display: block;
+.viewer__modal.--flipped-back {
+	animation-name: flip-back;
+	animation-duration: .5s;
+	animation-timing-function: cubic-bezier(1,-0.22, 0.05, 1.28);
 }
 
 @keyframes flip {
+	0% {transform: scaleX(1);}
+	50% {transform: scaleX(0);}
+	100% {transform: scaleX(1);}
+}
+
+@keyframes flip-back {
 	0% {transform: scaleX(1);}
 	50% {transform: scaleX(0);}
 	100% {transform: scaleX(1);}
@@ -217,7 +223,7 @@ h1 {
 	padding: 5px 0;
 }
 
-.experience-modal__desc {
+.experience-modal__desc, .viewer__modal li {
 	opacity: .70;
 	border-top: 1px solid rgba(255, 255, 255, .3);
 	padding: 5px 0;
