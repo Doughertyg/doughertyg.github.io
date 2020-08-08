@@ -58,3 +58,6 @@ function generateDataView(data) {
 
 fetchData(generateDataView);
 menuButton.addEventListener('click', toggleMenu);
+document.addEventListener('scroll', function() {
+  console.log('scrolled! scrolly: ', window.scrollY);
+})
