@@ -169,6 +169,41 @@ h1 {
 	height: 120px;
 	width: 300px;
 	max-width: 100%;
+	margin: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.viewer__modal:hover {
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.experience-modal__title {
+	font-size: 22px;
+	font-variant: all-petite-caps;
+	padding-bottom: 2px;
+	border-bottom: 1px solid rgba(255, 255, 255, .3);
+}
+
+.experience-modal__company {
+	font-size: 25px;
+	font-variant: petite-caps;
+}
+
+.experience-modal__desc {
+	opacity: .70;
+	border-top: 1px solid rgba(255, 255, 255, .3);
+	padding: 5px 0;
+	font-style: italic;
+}
+
+.experience-modal__date {
+	text-align: end;
+}
+
+.experience-modal__work {
+	display: none;
 }
 
 .module {

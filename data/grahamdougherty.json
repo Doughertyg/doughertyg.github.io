@@ -2,13 +2,15 @@
   {
     "company": "PIX SYSTEM",
     "title": "Software Engineer",
-    "date": "October 2019 - May 2020",
-    "description": "did stuff"
+    "date": "Oct 2019 - May 2020",
+    "description": "SAAS company serving the film and television industry",
+    "work": "<ul><li>'Applied knowledge knowledgeably'</li></ul>"
   },
   {
     "company": "Galvanize",
     "title": "Frontend Software Engineer (contract)",
-    "date": "June 2020 - August 2020",
-    "description": "did stuff"
+    "date": "June 2020 - Aug 2020",
+    "description": "An online learning platform serving bootcamp students, enterprise clients, and entrepreneurs",
+    "work": "<ul><li>'Applied knowledge knowledgeably'</li></ul>"
   }
 ]

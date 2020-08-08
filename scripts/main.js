@@ -25,10 +25,10 @@ function generateDataView(data) {
     const element = document.createElement('div');
     element.className = "viewer__modal module";
     element.innerHTML = `
-      <h1 class="experience-modal__company">${entry.company}</h1>
-      <h2 class="experience-modal__title">${entry.title}</h2>
-      <p class="experience-modal__date">${entry.date}</p>
+      <h1 class="experience-modal__title">${entry.title}</h1>
+      <h2 class="experience-modal__company">${entry.company}</h2>
       <p class="experience-modal__desc">${entry.description}</p>
+      <p class="experience-modal__date">${entry.date}</p>
     `
     viewer.appendChild(element);
   });
