@@ -1,17 +1,17 @@
 [
   {
-    "company": "PIX SYSTEM",
-    "title": "Software Engineer",
-    "date": "Oct 2019 - May 2020",
-    "description": "SAAS company serving the film and television industry",
-    "work": "• Built new features in React and used agile methodologies to decrease time to release by 50%• Implemented Redux to improve consistency and solve life cycle and state management bugs• Migrated parts of the app from AngularJS to React and proactively updated documentation• Utilized Redux and Redux-sagas to improve integration of older parts of the codebase with a new architecture, reducing needed maintenance and allowing the development of new features• Troubleshot and solved bugs relating to builds and deployment using Webpack configuration and Jenkins pipeline knowledge• Reviewed team members’ code and helped onboard new developers and contractors"
-  },
-  {
     "company": "Galvanize",
     "title": "Frontend Software Engineer (contract)",
     "date": "June 2020 - Aug 2020",
     "description": "An online learning platform serving bootcamp students, enterprise clients, and entrepreneurs",
     "work": "• Lead a redesign of user facing pages to improve performance and user experience• Implemented React best practices and refactored components to be composable• Utilized memory profiler, mini profiler, and Chrome Dev Tools to troubleshoot slow load times and implement a solution, reducing initial load time from up to 12s to as low as 224ms• Implemented lazy load, debounce, and memoization to improve app responsiveness• Improved the speed of search and filtering on a user-facing page of the app from 500ms to less than 100ms• Used Chrome Lighthouse and Accessibility Insights to review app accessibility and fix issues"
+  },
+  {
+    "company": "PIX SYSTEM",
+    "title": "Software Engineer",
+    "date": "Oct 2019 - May 2020",
+    "description": "SAAS company serving the film and television industry",
+    "work": "• Built new features in React and used agile methodologies to decrease time to release by 50%• Implemented Redux to improve consistency and solve life cycle and state management bugs• Migrated parts of the app from AngularJS to React and proactively updated documentation• Utilized Redux and Redux-sagas to improve integration of older parts of the codebase with a new architecture, reducing needed maintenance and allowing the development of new features• Troubleshot and solved bugs relating to builds and deployment using Webpack configuration and Jenkins pipeline knowledge• Reviewed team members’ code and helped onboard new developers and contractors"
   },
   {
     "company": "Nottingham Stocks",

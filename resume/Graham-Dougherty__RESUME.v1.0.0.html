@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Graham Dougherty</title>
+    <style>
+      .doc {
+        height: 1166px;
+        width: 901px;
+        margin: auto;
+        background-color: rgba(0.5, 0.5, 0.5, 0.05);
+        border: 1px solid #b9b9b9;
+        border-radius: 3px;
+        color: #483838;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .header {
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      .main {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .footer {
+        background-color: #f9f9f9;
+        flex-grow: 1;
+        padding: 5px;
+        border-top: 1px solid lightgray;
+      }
+
+      .header h1 {
+        margin: 0;
+        display: inline-block;
+      }
+
+      .header-details, .entry__header, .education__entry {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .header h5, .education__entry h5 {
+        margin: 0;
+        color: #868686;
+        font-style: italic;
+        display: inline-block;
+      }
+
+      .links {
+        display: flex;
+        flex-direction: column;
+        text-align: end;
+      }
+
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+
+      .contact-info h4, .contact-info h5 {
+        margin: 0;
+      }
+
+      .entry__header h5 {
+        font-style: italic;
+        color: #868686;
+      }
+
+      .dates h5{
+        font-style: normal;
+        color: #483838;
+      }
+
+      .project-title h4, h5, .education__entry h4 {
+        display: inline-block;
+      }
+
+      .summary {
+        font-family: monospace;
+      }
+
+      .summary h4, .right-col h4 {
+        margin-left: 0;
+      }
+
+      .skills p, .interests p {
+        margin-bottom: 10px;
+      }
+  
+      .project-desc {
+        margin: 0;
+      }
+
+      .position-items a {
+        font-weight: bold;
+      }
+
+      .education {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .education__entry h4 {
+        margin-right: 10px;
+      }
+   
+      .divider {
+        display: flex;
+      }
+ 
+      .divider span {
+        border: 1px solid lightgray;
+        flex-grow: 1;
+        margin: auto 5px;
+        margin-left: 10px;
+      }
+
+      .divider h4 {
+        margin-left: 5px;
+      }
+
+      .module {
+        border-bottom: 1px solid lightgray;
+        margin: 3px;
+        background-color: #f9f9f9;
+        padding: 5px;
+        font-family: monospace;
+      }
+
+      .module :last-child {
+        border-bottom: none;
+      }
+
+      .section {
+        box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.1);
+        border-radius: 3px;
+      }
+
+      .left-col {
+        flex-basis: 100%;
+      }
+
+      .right-col {
+        flex-basis: 20%;
+      }
+ 
+      .center-col {
+        flex-basis: 60%;
+        flex-grow: 1;
+      }
+
+      h3, h4, h5 {
+        margin: 0;
+        margin-left: 10px;
+      }
+
+      h3 {
+        margin-bottom: 5px;
+      }
+
+      a {
+        color: #483838;
+        text-decoration: none;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      ul {
+        margin: 10px 0;
+      }
+
+      .btn-pdf {
+        position: absolute;
+        padding: 5px;
+        border-radius: 3px;
+        border: 1px solid black;
+      }
+
+      .btn-pdf:hover {
+        background-color: lightslategray;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="btn-pdf"><a href='Graham Dougherty Resume v10.4.1.pdf'>PDF</a></div>
+    <div class="doc">
+      <div class="header">
+        <h1>Graham Dougherty</h1>
+        <h5>Software Engineer</h5>
+        <div class="header-details">
+          <div class="contact-info">
+            <h4>Doughertyg37@gmail.com</h4>
+            <h4>530-383-8806</h4>
+            <h5>San Francisco Bay Area</h5>
+          </div>
+          <div class="links">
+            <a href="linkedin.com/in/grahamdougherty">linkedin.com/in/grahamdougherty</a>
+            <a href="github.com/Doughertyg">github.com/Doughertyg</a>
+            <a href="http://grahamdougherty.info/">grahamdougherty.info</a>
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        <div class="left-col">
+          <div class="summary module">
+            <h4>Objectives</h4>
+            <p>Passionate software engineer dedicated to building performant and attractive web apps at scale utilizing modern technologies and the full tech stack with a background in AR/VR and 3D development</p>
+          </div>
+        </div>
+        <div class="center-col">
+          <div class="divider"><h4>Experience</h4><span></span></div>
+          <div class="experience section">
+            <div class="experience__entry module">
+              <div class="entry__header">
+                <div class="company-title">
+                  <h4>Pix System</h4>
+                  <h5>Software Engineer (web - frontend)</h5>
+                </div>
+                <div class="dates">
+                  <h5>Oct 2019 - May 2020</h5>
+                </div>
+              </div>
+              <ul class="position-items">
+                <li>Spearheaded the development of new features and reduced time to release by 75%</li>
+                <li>Proactively migrated sections of code from AngularJS to React and updated documentation</li>
+                <li>Implemented Redux state management to remove redundancies and improve consistency</li>
+                <li>Reviewed team members’ code and helping onboard new developers and contractors</li>
+              </ul>
+            </div>
+            <div class="experience__entry module">
+              <div class="entry__header">
+                <div class="company-title">
+                  <h4>Shed LA/Tool of North America</h4>
+                  <h5>VFX Artist and AR/VR Mobile Developer</h5>
+                </div>
+                <div class="dates">
+                  <h5>Mar 2017 - Mar 2019</h5>
+                </div>
+              </div>
+              <ul class="position-items">
+                <li>Consulted producing team and clients on AR technologies and best practices and implemented different AR technologies based on project needs and requirements</li>
+                <li>Optimized 3D assets using Maya 3d and Meshlab to reduce app size by 71%, improving performance</li>
+                <li>Built augmented reality apps using C# and Unity3d used to win bids from Adidas, Coca-Cola, and others</li>
+                <li><a href="https://toolofna.com/work/adidas-ar">https://toolofna.com/work/adidas-ar</a> | <a href="https://youtu.be/nV2OYhjilYg">https://youtu.be/nV2OYhjilYg</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="divider"><h4>Projects</h4><span></span></div>
+          <div class="projects section">
+            <div class="projects__entry module">
+              <div class="entry__header">
+                <div class="project-title">
+                  <h4>Nottingham</h4>
+                  <h5 class="project-desc">A stock trading web app</h5>
+                  <h5>Technologies Used: AWS EC2, Postgresql, Redis, Nginx, New Relic, Loader.io</h5>
+                </div>
+              </div>
+              <ul class="position-items">
+                <li>Increased RPS from 400 to 2100 with a latency of less than 200 ms by scaling services horizontally using Nginx as a load balancer</li>
+                <li>Implemented cluster modules to optimize Node performance</li>
+                <li>Used Artillery, New Relic, and loader.io to stress service and analyze and optimize performance</li>
+                <li>Increased query speeds by 90% by optimizing database configuration and data shape</li>
+                <li><a href="https://github.com/the-very-merry-men/earnings-graph-graham">https://github.com/the-very-merry-men/earnings-graph-graham</a></li>
+              </ul>
+            </div>
+            <div class="projects__entry module">
+              <div class="entry__header">
+                <div class="project-title">
+                  <h4>Vapor</h4>
+                  <h5 class="project-desc">A full-stack video game web store</h5>
+                  <h5>Technologies Used: React, Styled Components, Mysql, Express, Node, Webpack, Docker, Babel</h5>
+                </div>
+              </div>
+              <ul class="position-items">
+                <li>Designed a RESTful api to elegantly represent resource relationships and serve requests efficiently</li>
+                <li>Utilized webpack and webpack configuration to unify component styles and reduce bundle size by 60%</li>
+                <li>Achieved a speed score of 98 from Pagespeed Insights using Google Dev tools and by minimizing the number of needed server requests and reducing bundle size and included dependencies</li>
+                <li>Spearheaded adoption of styled components to ensure component compatibility and style cohesion</li>
+                <li>Implemented a Mysql database of multiple tables to optimize querying of relational user data</li>
+                <li><a href="https://github.com/Doughertyg/vapor_recentNews">https://github.com/Doughertyg/vapor_recentNews</a></li>
+              </ul>
+            </div>
+            <div class="projects__entry module">
+              <div class="entry__header">
+                <div class="project-title">
+                  <h4>TekuGlass</h4>
+                  <h5 class="project-desc">A full-stack craft beer review and comparison website</h5>
+                  <h5>Technologies Used: React, Express, Mysql, Sequelize, Node, Webpack, Axios, Javascript, Babel</h5>
+                </div>
+              </div>
+              <ul class="position-items">
+                <li>Utilized React and styled components to build an attractive and interactive web app</li>
+                <li>Designed and built a complex API and database framework for handling and sorting a large dataset</li>
+                <li>Focused on test driven development and core functionality to deliver a superior and feature-rich product</li>
+                <li><a href="https://github.com/Doughertyg/mvp">https://github.com/Doughertyg/mvp</a></li>
+              </ul>
+            </div> 
+          </div>
+         
+        </div>
+        <div class="right-col">
+          <div class="skills module">
+            <h4>Skills</h4>
+            <h4>Frontend:</h4><p>Javascript ES6+<br>HTML5<br>CSS3<br>Styled Components<br>Sass<br>React.js<br>Redux<br>Redux-Sagas<br>Typescript<br>Webpack<br>Babel<br>npm<br>AJAX/Fetch/Axios<br>Three.js<br>UI/UX</p>
+            <h4>Backend:</h4><p>Node.js<br>Express<br>Nginx<br>MongoDB<br>Mongoose.js<br>Mysql<br>Sequelize<br>PostgreSQL<br>AWS<br>Docker<br>Restful APIs</p>
+            <h4>Other:</h4><p>Git<br>Mocha/Chai<br>Linux<br>Jest/Enzyme<br>CircleCI<br>Jenkins<br>Agile Development</p>
+          </div>
+          <div class="interests module">
+            <h4>Interests:</h4>
+            <p>Astrophotography
+            <br>Flying Drones
+            <br>Basketball (sfgba)
+            <br>Physics
+            <br>Augmented/Virtual Reality</p>
+          </div>
+        </div>
+      </div>
+      <div class="divider"><h4>Education</h4><span></span></div>
+      <div class="footer">
+        <div class="education">
+          <div class="education__entry">
+            <div class="education__program">
+              <h4>Hack Reactor,</h4><h5>Advanced Software Engineering Immersive Program</h5>
+            </div>
+            <h4>April 2019</h4>
+          </div>
+          <div class="education__entry">
+            <div class="education__program">
+              <h4>Santa Clara University,</h4><h5>B.S. in Communications with a Digital Filmmaking Emphasis</h5>
+            </div>
+            <h4>June 2012</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

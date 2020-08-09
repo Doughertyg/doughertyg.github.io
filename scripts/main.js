@@ -1,6 +1,7 @@
 const menuButton = document.getElementById('menu-btn');
 const menuItemsWrapper = document.getElementsByClassName('--menu-items__wrapper');
 const viewer = document.getElementsByClassName('main__viewer')[0];
+const viewerBtns = document.getElementsByClassName('--viewer-btn');
 
 function toggleMenu() {
   if ([...menuItemsWrapper[0].classList].includes('collapsed')) {
@@ -10,20 +11,23 @@ function toggleMenu() {
   }
 }
 
+var dataClosure;
 function fetchData(fn) {
   const req = new XMLHttpRequest();
   req.open('GET', '/data/grahamdougherty.json', true);
   req.onload = function() {
     const data = JSON.parse(req.responseText);
+    dataClosure = data;
     fn(data);
   }
   req.send();
 }
 
 function generateDataView(data) {
-  data.forEach(entry => {
+  data.forEach(function(entry, index) {
     const element = document.createElement('div');
-    element.className = "viewer__modal module";
+    element.className = index === 0 ? "viewer__modal module --in-focus" : "viewer__modal module";
+    element.id = `id-${index}`;
     const html = `
       <h1 class="experience-modal__title">${entry.title}</h1>
       <h2 class="experience-modal__company">${entry.company}</h2>
@@ -56,8 +60,73 @@ function generateDataView(data) {
   });
 }
 
+function debounce(fn, wait, maxWait, leading) {
+  let timeout;
+  let startTime;
+  let currentTime;
+
+  return function executedFunction() {
+    const args = [].slice.call(arguments);
+    const later = function() {
+      clearTimeout(timeout);
+      timeout = null;
+      fn.apply(null, args);
+    };
+
+    if (timeout) {
+      clearTimeout(timeout);
+    } else {
+      startTime = Date.now();
+      leading && fn.apply(null, args);
+    }
+
+    currentTime = Date.now();
+    if (currentTime - startTime > maxWait) {
+      startTime = Date.now();
+      clearTimeout(timeout);
+      return fn.apply(null, args);
+    }
+
+    timeout = setTimeout(later, wait);
+  };
+};
+
+var index = 0;
+
+function handleScroll(e) {
+  
+  let scrollingDown = e.deltaY > 0 ? true : false;
+
+  if (scrollingDown && index < dataClosure.length - 1) {
+    index++;
+  } else if (!scrollingDown && index > 0) {
+    index--;
+  }
+
+  const el = document.getElementById(`id-${index}`);
+  const prevEl = document.getElementById(`id-${scrollingDown ? index - 1 : index + 1}`);
+  el.classList.add('--in-focus');
+  prevEl.classList.remove('--in-focus');
+}
+
+function handleClick(e) {
+  let scrollingLeft = [].slice.call(e.target.classList).includes('--left') ? true : false;
+
+  if (scrollingLeft && index > 0) {
+    index--;
+  }
+  
+  if (!scrollingLeft && index < dataClosure.length - 1) {
+    index++;
+  }
+
+  const el = document.getElementById(`id-${index}`);
+  const prevEl = document.getElementById(`id-${scrollingLeft ? index + 1 : index - 1}`);
+  el.classList.add('--in-focus');
+  prevEl.classList.remove('--in-focus');
+}
+
 fetchData(generateDataView);
 menuButton.addEventListener('click', toggleMenu);
-document.addEventListener('scroll', function() {
-  console.log('scrolled! scrolly: ', window.scrollY);
-})
+[].slice.call(viewerBtns).forEach(function(btn) { btn.addEventListener('click', handleClick)});
+document.addEventListener('wheel', debounce(handleScroll, 250, 250));

@@ -56,6 +56,7 @@ body {
 	height: 100vh;
 	color: snow;
 	font-family: Arial, Helvetica, sans-serif;
+	overflow: hidden;
 }
 
 .main__bg {
@@ -76,6 +77,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	box-sizing: border-box;
+	overflow: hidden;
 }
 
 .--header {
@@ -93,6 +95,7 @@ h1 {
 .--menu-viewer {
 	display: flex;
 	flex-grow: 1;
+	overflow: hidden;
 }
 
 .--header img {
@@ -161,6 +164,7 @@ h1 {
 	flex-grow: 1;
 	flex-wrap: wrap;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 }
@@ -178,8 +182,20 @@ h1 {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	transform-origin: center;
-	transition: height .5s cubic-bezier(1,-0.22, 0.05, 1.28);
+	transform-origin: center center;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity .5s cubic-bezier(1,-0.22, 0.05, 1.28);
+}
+
+.viewer__modal.--in-focus {
+	visibility: visible;
+	position: absolute;
+	transform-origin: center center;
+	top: 50%;
+	left: 50%;
+	opacity: 1;
+	transform: translate(-50%, -50%);
 }
 
 .viewer__modal:hover {
@@ -190,24 +206,26 @@ h1 {
 	animation-name: flip;
 	animation-duration: .5s;
 	animation-timing-function: cubic-bezier(1,-0.22, 0.05, 1.28);
+	transform-origin: center;
 }
 
 .viewer__modal.--flipped-back {
 	animation-name: flip-back;
 	animation-duration: .5s;
 	animation-timing-function: cubic-bezier(1,-0.22, 0.05, 1.28);
+	transform-origin: center;
 }
 
 @keyframes flip {
-	0% {transform: scaleX(1);}
-	50% {transform: scaleX(0);}
-	100% {transform: scaleX(1);}
+	0% {transform-origin: center; transform: translate(-50%, -50%) scaleX(1)}
+	50% {transform-origin: center; transform: translate(-50%, -50%) scaleX(0)}
+	100% {transform-origin: center; transform: translate(-50%, -50%) scaleX(1)}
 }
 
 @keyframes flip-back {
-	0% {transform: scaleX(1);}
-	50% {transform: scaleX(0);}
-	100% {transform: scaleX(1);}
+	0% {transform-origin: center center; transform: translate(-50%, -50%) scaleX(1)}
+	50% {transform-origin: center center; transform: translate(-50%, -50%) scaleX(0)}
+	100% {transform-origin: center center; transform: translate(-50%, -50%) scaleX(1)}
 }
 
 .experience-modal__title {
@@ -246,15 +264,39 @@ h1 {
 
 .btn {
 	color: snow;
-	opacity: .8;
+	opacity: .5;
 	cursor: pointer;
 	transform: rotate(0);
 }
 
 .btn:hover {
 	opacity: 1;
+	text-shadow: 0 0 8px;
+}
+
+.--viewer-btn {
+	position: absolute;
+  top: 50%;
+  height: fit-content;
+  margin: 0 10px;
+	transform: translate(0, -50%);
+}
+
+.--left-btn {
+	left: 25%;
+}
+
+.--right-btn {
+	left: 75%;
 }
 
 .--menu a {
 	text-decoration: none;
+}
+
+.img-copyright {
+	opacity: .5;
+	position: absolute;
+	top: calc(100% - 25px);
+	font-size: 14px;
 }
